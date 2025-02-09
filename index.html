@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Homepage with jQuery Enhancements</title>
+  <title>Homepage with Enhanced UI</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <!-- Include jQuery from a CDN -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     /* CSS Variables for Theming */
     :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #34495e;
-      --text-color: #333;
-      --background-color: #fdfdfd;
-      --hover-color: rgba(236, 240, 241, 0.2);
-      --accent-color: #e74c3c;
+      --primary-color: #005f73;   /* Dark cyan */
+      --secondary-color: #0a9396; /* Lighter cyan */
+      --text-color: #001219;      /* Deep dark blue */
+      --background-color: #fefae0;/* Soft cream */
+      --hover-color: rgba(255, 255, 255, 0.2);
+      --accent-color: #ee9b00;    /* Amber */
     }
 
     /* Basic Reset */
@@ -24,7 +24,7 @@
 
     /* Global Styling */
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Lato', sans-serif;
       line-height: 1.6;
       color: var(--text-color);
       background: var(--background-color);
@@ -48,29 +48,29 @@
       margin-right: 25px;
     }
     nav ul li a {
-      color: #ecf0f1;
+      color: #fefae0;
       text-decoration: none;
       padding: 8px 12px;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     nav ul li a:hover {
       background: var(--hover-color);
+      color: var(--accent-color);
       border-radius: 4px;
     }
-
-    /* Register Button Styling */
     .register-btn {
       background: var(--accent-color);
       border-radius: 25px;
       padding: 10px 25px;
       font-weight: bold;
       transition: transform 0.3s ease, background 0.3s ease;
+      color: #001219;
+      text-decoration: none;
     }
     .register-btn:hover {
-      background: #c0392b;
+      background: #c77d0e;
       transform: scale(1.05);
     }
-
     /* Dropdown Menu Styling */
     .dropdown-menu {
       display: none;
@@ -89,11 +89,12 @@
     .dropdown-menu li a {
       padding: 10px;
       display: block;
+      color:rgb(7, 241, 163);
     }
     .dropdown-menu li a:hover {
-      background: #3d566e;
+      background:rgb(133, 243, 7);
     }
-
+    
     /* Carousel Styling */
     .carousel {
       position: relative;
@@ -122,7 +123,7 @@
       bottom: 20%;
       left: 50%;
       transform: translateX(-50%);
-      color: white;
+      color: #fefae0;
       text-align: center;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
@@ -146,7 +147,7 @@
     .carousel-controls button {
       background: rgba(0,0,0,0.5);
       border: none;
-      color: #fff;
+      color:rgb(241, 226, 129);
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
@@ -160,23 +161,34 @@
     /* Section Styling */
     section {
       padding: 80px 20px;
+      background: var(--background-color);
     }
     section h2 {
       margin-bottom: 20px;
       font-size: 2.5em;
       text-align: center;
       font-family: 'Poppins', sans-serif;
+      color: var(--primary-color);
     }
     section p {
       margin-bottom: 20px;
       font-size: 1.1em;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 20px;
       text-align: center;
+      color: var(--text-color);
     }
-    #services, #contact {
-      background:rgb(101, 212, 240);
+    /* Specific Section Backgrounds */
+    #services {
+      background:rgb(72, 217, 243);
+    }
+    #about {
+      background: #ee9b00;
+      color: #fff;
+    }
+    #contact {
+      background: #ca6702;
+      color: #fff;
     }
 
     /* Responsive Adjustments */
@@ -211,35 +223,35 @@
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="register.php" class="register-btn">Register Now</a>
+    <a href="register.html" class="register-btn">Register Now</a>
   </nav>
 
   <!-- Carousel Section -->
   <div class="carousel" id="home">
     <div class="carousel-item active">
-      <a href="page1.html">
-        <img src="download (4).jpeg" alt="Featured 1">
+     
+        <img src="images 1.jpeg" alt="Featured 1">
         <div class="carousel-caption">
           <h3>Amazing Designs</h3>
-          <p>Explore our creative solutions</p>
+          <p>Explore creative and responsive design solutions.</p>
         </div>
       </a>
     </div>
     <div class="carousel-item">
-      <a href="page2.html">
-        <img src="download (5).jpeg" alt="Featured 2">
+      
+        <img src="images 1.jpeg" alt="Featured 2">
         <div class="carousel-caption">
           <h3>Innovative Development</h3>
-          <p>Build scalable applications</p>
+          <p>Build scalable and robust web applications.</p>
         </div>
       </a>
     </div>
     <div class="carousel-item">
-      <a href="page3.html">
-        <img src="images.png" alt="Featured 3">
+      
+        <img src="images.jpeg" alt="Featured 3">
         <div class="carousel-caption">
           <h3>Effective Marketing</h3>
-          <p>Boost your business growth</p>
+          <p>Boost your business growth with smart marketing.</p>
         </div>
       </a>
     </div>
@@ -249,32 +261,34 @@
     </div>
   </div>
 
-  <!-- Additional Sections -->
+  <!-- Services Section -->
   <section id="services">
-    <h2>Services</h2>
-    <p>Discover our range of services tailored to your needs.</p>
+    <h2>Our Services</h2>
+    <p>We offer a wide range of services to meet your needs.</p>
     <section id="design">
       <h3>Design</h3>
       <p>Creative design solutions that bring your ideas to life.</p>
     </section>
     <section id="development">
       <h3>Development</h3>
-      <p>Robust and scalable development services for modern web applications.</p>
+      <p>Robust and scalable development services for modern businesses.</p>
     </section>
     <section id="marketing">
       <h3>Marketing</h3>
-      <p>Innovative marketing strategies to boost your business.</p>
+      <p>Innovative marketing strategies to boost your brand.</p>
     </section>
   </section>
   
+  <!-- About Section -->
   <section id="about">
-    <h2>About</h2>
-    <p>Learn more about our team and mission.</p>
+    <h2>About Us</h2>
+    <p>We are a passionate team dedicated to delivering excellence in design, development, and marketing. Our mission is to empower your business through innovative solutions.</p>
   </section>
   
+  <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Get in touch with us for more information.</p>
+    <h2>Contact Us</h2>
+    <p>Have questions or need assistance? Reach out to us today and let's start a conversation!</p>
   </section>
 
   <!-- jQuery Scripts -->
@@ -315,7 +329,7 @@
         showItem(currentIndex);
       }, 5000);
 
-      // Smooth Scrolling
+      // Smooth Scrolling for navigation links
       $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
         var target = this.hash;
@@ -326,7 +340,7 @@
         }
       });
 
-      // Dropdown Menu
+      // Dropdown Menu Hover Behavior
       $('.dropdown').hover(
         function() {
           $(this).find('.dropdown-menu').stop(true, true).slideDown(200);
