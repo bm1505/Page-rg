@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <!-- Link your external CSS if needed -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- jQuery from CDN --> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* Basic Reset and Global Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, rgb(77, 108, 250), rgb(212, 248, 112));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: linear-gradient(135deg, rgb(152, 245, 156), rgb(112, 194, 248));
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      animation: slideIn 0.8s ease-out;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #444;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .form-group div {
+      width: 48%;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #555;
+      text-align: left;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus, select:focus {
+      border-color: #667eea;
+      outline: none;
+      box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #764ba2, #667eea);
+      transform: scale(1.05);
+    }
+    .success-message, .error-message {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .error-message {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    @media (max-width: 480px) {
+      .form-group div {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>User Registration</h2>
+  <!-- For demonstration, the form submits to a static success page -->
+  <form id="registrationForm" action="success.html" method="POST">
+    <div class="form-group">
+      <div>
+        <label>Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+      </div>
+      <div>
+        <label>Registration Number:</label>
+        <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000" required>
+      </div>
+      <div>
+        <label>Sex:</label>
+        <select id="sex" name="sex" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label>Region:</label>
+        <select id="region" name="region" required>
+          <option value="">Select Region</option>
+          <!-- All regions provided below -->
+          <option value="1">Arusha</option>
+          <option value="2">Dar es Salaam</option>
+          <option value="3">Dodoma</option>
+          <option value="4">Geita</option>
+          <option value="5">Iringa</option>
+          <option value="6">Kagera</option>
+          <option value="7">Katavi</option>
+          <option value="8">Kigoma</option>
+          <option value="9">Kilimanjaro</option>
+          <option value="10">Lindi</option>
+          <option value="11">Manyara</option>
+          <option value="12">Mara</option>
+          <option value="13">Mbeya</option>
+          <option value="14">Morogoro</option>
+          <option value="15">Mtwara</option>
+          <option value="16">Mwanza</option>
+          <option value="17">Njombe</option>
+          <option value="18">Pwani</option>
+          <option value="19">Rukwa</option>
+          <option value="20">Ruvuma</option>
+          <option value="21">Shinyanga</option>
+          <option value="22">Simiyu</option>
+          <option value="23">Singida</option>
+          <option value="24">Songwe</option>
+          <option value="25">Tabora</option>
+        </select>
+      </div>
+      <div>
+        <label>District:</label>
+        <select id="district" name="district" required>
+          <option value="">Select District</option>
+        </select>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+<script>
+  // JavaScript object containing district data for regions
+  var districts = {
+    "1": [
+      { "id": "1", "name": "Arusha City" },
+      { "id": "2", "name": "Arumeru" },
+      { "id": "3", "name": "Karatu" },
+      { "id": "4", "name": "Monduli" },
+      { "id": "5", "name": "Ngorongoro" }
+    ],
+    "2": [
+      { "id": "6", "name": "Ilala" },
+      { "id": "7", "name": "Kinondoni" },
+      { "id": "8", "name": "Temeke" },
+      { "id": "9", "name": "Kigamboni" }
+    ],
+    "3": [
+      { "id": "10", "name": "Dodoma Urban" },
+      { "id": "11", "name": "Bahi" },
+      { "id": "12", "name": "Kondoa" },
+      { "id": "13", "name": "Chamwino" }
+    ],
+    "4": [
+      { "id": "14", "name": "Bukombe" },
+      { "id": "15", "name": "Chato" },
+      { "id": "16", "name": "Geita Town" }
+    ],
+    "5": [
+      { "id": "17", "name": "Iringa Urban" },
+      { "id": "18", "name": "Kilolo" },
+      { "id": "19", "name": "Mufindi" }
+    ],
+    "6": [
+      { "id": "20", "name": "Bukoba Urban" },
+      { "id": "21", "name": "Karagwe" },
+      { "id": "22", "name": "Missenyi" }
+    ],
+    "7": [
+      { "id": "23", "name": "Mpanda" },
+      { "id": "24", "name": "Mlele" }
+    ],
+    "8": [
+      { "id": "25", "name": "Kasulu" }
+    ]
+    // Regions 9 to 25 have no defined districts in this example.
+  };
+
+  // When the region is changed, update the district dropdown
+  $(document).ready(function() {
+    $("#region").change(function() {
+      var regionID = $(this).val();
+      var options = "<option value=''>Select District</option>";
+      if (districts.hasOwnProperty(regionID) && districts[regionID].length > 0) {
+        $.each(districts[regionID], function(index, district) {
+          options += "<option value='" + district.id + "'>" + district.name + "</option>";
+        });
+      } else {
+        options = "<option value=''>No districts available</option>";
+      }
+      $("#district").html(options);
+    });
+  });
+</script>
+
+</body>
+</html>
